@@ -1,0 +1,21 @@
+version: "3"
+services:
+  node-app:
+    build:
+      context: .
+      args: 
+        NODE_ENV: development
+    volumes:
+      - ./:/app:ro
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - PORT=8080
+      - MONGO_USER=hawk
+      - MONGO_PASSWORD=example
+    command: npm run dev
+
+  mongo:
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: hawk
+      MONGO_INITDB_ROOT_PASSWORD: example
