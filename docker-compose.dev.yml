@@ -13,6 +13,8 @@ services:
       - PORT=8080
       - MONGO_USER=hawk
       - MONGO_PASSWORD=example
+      - SESSION_SECRET=secret
+
     command: npm run dev
 
   mongo:
