@@ -5,7 +5,6 @@ const session  = require("express-session");
 const redis    = require("redis");
 
 let RedisStore  = require("connect-redis")(session);
-
 const { 
   MONGO_IP,
   MONGO_PORT,
@@ -19,8 +18,6 @@ const postRouter = require("./routes/postRoutes");
 const userRouter = require("./routes/userRoutes");
 
 let redisClient = redis.createClient({
-  legacyMode: true,
-  //url: `redis://hawk:example@${REDIS_URL}:${REDIS_PORT}`,
   host: REDIS_URL,
   port: REDIS_PORT,
 });
